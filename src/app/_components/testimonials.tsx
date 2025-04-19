@@ -4,9 +4,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import tutor1 from '../../../public/tutor1.png'
 import tutor2 from '../../../public/tutor2.png'
+import { v4 as uuidV4 } from 'uuid'
 
 const testimonials = [
     {
+      id: uuidV4(),
       content:
         "Desde que comecei a levar a Luna para banho e tosa aqui, ela nunca esteve tão feliz! O atendimento é impecável, os profissionais são super cuidadosos e sempre deixam minha peluda linda e cheirosa. Recomendo de olhos fechados!",
       author: "Mariana Souza",
@@ -14,6 +16,7 @@ const testimonials = [
       image: tutor2,
     },
     {
+      id: uuidV4(),
       content:
         "O serviço de hotel para pets foi uma experiência incrível! Precisei viajar e fiquei tranquilo sabendo que o Thor estava sendo bem cuidado. Recebi fotos e atualizações diárias, e ele voltou para casa super feliz! Sem dúvida, o melhor petshop da região.",
       author: "Rafael",
@@ -21,6 +24,7 @@ const testimonials = [
       image: tutor1,
     },
     {
+      id: uuidV4(),
       content: "Meus gatos nunca gostaram de sair de casa, mas o atendimento nesse petshop fez toda a diferença. A equipe é muito paciente e cuidadosa, e o serviço de banho especializado para felinos foi maravilhoso! Agora sei onde confiar o cuidado deles.",
       author: "Camila fernandes",
       role: "Tutora da Mel e do Max",
@@ -53,8 +57,8 @@ export function Testimonials() {
                 <div className="relative max-w-4xl mx-auto">
                     <div className='overflow-hidden' ref={emblaRef}>
                         <div className='flex'>
-                            {testimonials.map((item, index) =>(
-                                <div key={index} className='flex-[0_0_100%] min-w-0 px-3'>
+                            {testimonials.map((item) =>(
+                                <div key={item.id} className='flex-[0_0_100%] min-w-0 px-3'>
                                     <article className='bg-[#1e293b] text-white rounded-2xl p-6 space-y-4 h-full flex flex-col'>
                                      <div className='flex flex-col items-center text-center space-x-4'>
                                         <div className='relative w-24 h-24'>

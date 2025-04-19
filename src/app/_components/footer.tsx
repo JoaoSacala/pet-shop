@@ -6,15 +6,16 @@ import primier from '../../../public/primier.png'
 import natural from '../../../public/natural.png'
 import whiskas from '../../../public/whiskas.png'
 import Link from 'next/link'
+import {v4 as uuidV4} from 'uuid'
 import { FacebookLogo, InstagramLogo, WhatsappLogo } from '@phosphor-icons/react/dist/ssr'
 
 const brands = [
-    { name: "Royal Canin", logo: royal },
-    { name: "Golden", logo: golden },
-    { name: "Primier", logo: primier },
-    { name: "Formula Natural", logo: natural },
-    { name: "Whiskas", logo: whiskas },
-    { name: "Golden", logo: golden },
+    { id: uuidV4(), name: "Royal Canin", logo: royal },
+    { id: uuidV4(), name: "Golden", logo: golden },
+    { id: uuidV4(), name: "Primier", logo: primier },
+    { id: uuidV4(), name: "Formula Natural", logo: natural },
+    { id: uuidV4(), name: "Whiskas", logo: whiskas },
+    { id: uuidV4(), name: "Golden", logo: golden },
   ]
 
 export function Footer() {
@@ -26,8 +27,8 @@ export function Footer() {
                     <h4 className='text-3xl font-semibold mb-8 text-center'>Nossos parceiros</h4>
 
                     <div className='grid grid-cols-2 lg:grid-cols-6 gap-8'>
-                        {brands.map((item, index) => (
-                            <div key={index} className='bg-white p-4 rounded-lg flex items-center justify-center'>
+                        {brands.map((item) => (
+                            <div key={item.id} className='bg-white p-4 rounded-lg flex items-center justify-center'>
                                 <Image 
                                     src={item.logo}
                                     alt={item.name}
