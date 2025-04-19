@@ -79,7 +79,7 @@ export function Footer() {
                        </div>
                     </div>
                 </footer>
-
+                        <div>desenvolvido por João Sacala</div>
             </div>
         </section>
     )
